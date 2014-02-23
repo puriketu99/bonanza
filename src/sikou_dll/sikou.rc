@@ -1,0 +1,115 @@
+/* sikou.rc - Feb 5 2006 */
+
+#include "windows.h"
+#include "sikou.h"
+
+ICON_MAIN ICON "bonanza.ico"
+
+DLG_MAIN DIALOGEX 0, 0, 429, 71
+STYLE WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | DS_SHELLFONT
+CLASS TEXT("DLG_MAIN")
+FONT 8, "MS Shell Dlg"
+CAPTION TEXT("SIKOU.DLL Control panel")
+{
+  CONTROL TEXT(""),            ID_INFO,     TEXT("HSTATIC"),
+    SS_SUNKEN | SS_NOTIFY,
+      1,  1,  427,  9
+
+  CONTROL TEXT("Score:"),      ID_SCORE1,   TEXT("HSTATIC"),
+    SS_NOTIFY,
+      3,  13,  23,   9
+  CONTROL TEXT("+0"),          ID_SCORE2,   TEXT("HSTATIC"),
+    SS_SUNKEN | SS_RIGHT | SS_NOTIFY,
+     27,  12,  30,   9
+  CONTROL TEXT("Time Spent:"), ID_TIME1M,   TEXT("HSTATIC"),
+    SS_NOTIFY,
+     67,  13,  50,   9
+  CONTROL TEXT("00:00"),       ID_TIME2M,   TEXT("HSTATIC"),
+    SS_SUNKEN | SS_RIGHT | SS_NOTIFY,
+    110,  12,  30,   9
+
+  CONTROL TEXT("Elapsed:"),    ID_TIME1,    TEXT("HSTATIC"),
+    SS_NOTIFY,
+    153,  13,  32,   9
+  CONTROL TEXT("0.00"),        ID_TIME2,    TEXT("HSTATIC"),
+    SS_SUNKEN | SS_RIGHT | SS_NOTIFY,
+    185,  12,  30,   9
+  CONTROL TEXT("Mem Used:"),   ID_MEM1,     TEXT("HSTATIC"),
+    SS_NOTIFY,
+    225,  13,  38,   9
+  CONTROL TEXT("0%"),          ID_MEM2,     TEXT("HSTATIC"),
+    SS_SUNKEN | SS_RIGHT | SS_NOTIFY,
+    264,  12,  22,   9
+  CONTROL TEXT("CPU:"),        ID_CPU1,     TEXT("HSTATIC"),
+    SS_NOTIFY,
+    299,  13,  18,   9
+  CONTROL TEXT("0%"),          ID_CPU2,     TEXT("HSTATIC"),
+    SS_SUNKEN | SS_RIGHT | SS_NOTIFY,
+    318,  12,  22,   9
+  CONTROL TEXT("NPS:"),        ID_NPS1,     TEXT("HSTATIC"),
+    SS_NOTIFY,
+    352,  13,  17,   9
+  CONTROL TEXT("0"),           ID_NPS2,     TEXT("HSTATIC"),
+    SS_SUNKEN | SS_RIGHT | SS_NOTIFY,
+    370,  12,  25,   9
+
+  CONTROL TEXT("Resign:"),     ID_RSGN1,    TEXT("HSTATIC"),
+    SS_NOTIFY,
+     3,  27,  43,   9
+  CONTROL TEXT(""),            ID_RSGN2,    COMBOBOX,
+    WS_VSCROLL | CBS_DROPDOWN,
+    29,  25,  42,   100
+  CONTROL TEXT("Time Ctrl: a)"),  ID_TC1,   TEXT("HSTATIC"),
+    SS_NOTIFY,
+     80,  27,  43,   9
+  CONTROL TEXT(""),            ID_TC2M,     COMBOBOX,
+    WS_VSCROLL | CBS_DROPDOWN,
+    123,  25,  42,   100
+  CONTROL TEXT(":00    b)"),   ID_TC1M,     TEXT("HSTATIC"),
+    SS_NOTIFY,
+    166,  27,  29,   9
+  CONTROL TEXT(""),            ID_TC2,      COMBOBOX,
+    WS_VSCROLL | CBS_DROPDOWN,
+    195,  25,  42,   100
+  CONTROL TEXT("Mem Total:"),  ID_MEM_TTL1, TEXT("HSTATIC"),
+    SS_NOTIFY,
+    245,  27,  39,   9
+  CONTROL TEXT(""),            ID_MEM_TTL2, COMBOBOX,
+    WS_VSCROLL | CBS_DROPDOWNLIST,
+    284,  25,  34,   100
+  CONTROL TEXT("Thrd Num:"),   ID_TLP_NUM1, TEXT("HSTATIC"),
+    SS_NOTIFY,
+    325,  27,  38,   9
+  CONTROL TEXT(""),            ID_TLP_NUM2, COMBOBOX,
+    WS_VSCROLL | CBS_DROPDOWNLIST,
+    361,  25,  27,   100
+
+  CONTROL TEXT("Hide Result"), ID_SHOW,     TEXT("HBUTTON"),
+    BS_AUTOCHECKBOX,
+      2,  41,  55,   9
+  CONTROL TEXT("Audio"),       ID_AUDIO,    TEXT("HBUTTON"),
+    BS_AUTOCHECKBOX,
+     60,  41,  35,   9
+  CONTROL TEXT("Ponder"),      ID_PONDER,   TEXT("HBUTTON"),
+    BS_AUTOCHECKBOX,
+    100,  41,  40,   9
+  CONTROL TEXT("Narrow Book"), ID_NRWBK,    TEXT("HBUTTON"),
+    BS_AUTOCHECKBOX,
+    143,  41,  55,   9
+  CONTROL TEXT("Strict Time"), ID_STRCTT,   TEXT("HBUTTON"),
+    BS_AUTOCHECKBOX,
+    205,  41,  55,   9
+  CONTROL TEXT("Move Now!"),   ID_MOVE_NOW, TEXT("HBUTTON"),
+    WS_DISABLED | BS_PUSHBUTTON,
+    372, 40,  55,   13
+
+  CONTROL TEXT(""),            ID_ICON_GP,  BUTTON,
+    BS_GROUPBOX,
+    399,   8, 30, 30
+  CONTROL TEXT(""),            ID_ICON_BG,  TEXT("HSTATIC"),
+    SS_NOTIFY,
+    402,  14, 24, 21
+  CONTROL ICON_MAIN,           ID_ICON,     STATIC,
+    SS_ICON,
+    403,  15,  0, 0
+}
